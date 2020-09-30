@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.3
+Name: imagegenerator
+Formal-Name: Image Generator
+App-ID: net.digitalnook.imagegenerator
+Version: 0.0.1
+Home-page: https://digitalnook.net/
+Author: Tom Dougiamas
+Author-email: tom@digitalnook.net
+Summary: Generate an image based on a quote
