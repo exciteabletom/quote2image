@@ -17,4 +17,7 @@ See `help(generate)` for documentation.
 ## Output examples
 
 <img src="https://github.com/exciteabletom/quote2image/blob/master/examples/example1.png" />
+    
+        
+        
 <img src="https://github.com/exciteabletom/quote2image/blob/master/examples/example2.png" />
