@@ -32,5 +32,5 @@ setup(
 
 	python_requires=">=3.6",
 
-	install_requires=["Pillow>=6.0", "toga", "toga-cocoa", "toga-gtk"]
+	install_requires=["Pillow>=6.0", "toga==0.3.0.dev23"]
 )
