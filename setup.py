@@ -7,7 +7,7 @@ with open("./README.md", encoding="utf-8") as readme:
 
 setup(
 	name="quote2image",
-	version="0.1.1",
+	version="0.1.2",
 
 	description="Generate an image based on a quote.",
 	long_description=long_description,
@@ -32,5 +32,10 @@ setup(
 
 	python_requires=">=3.6",
 
-	install_requires=["Pillow>=6.0", "toga==0.3.0.dev23"]
+	install_requires=["Pillow>=6.0", "toga==0.3.0.dev23"],
+
+	package_data = {
+		"flairs": ["*"],
+		"fonts": ["*"]
+	}
 )
