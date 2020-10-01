@@ -13,7 +13,7 @@ setup(
 	long_description=long_description,
 	long_description_content_type="text/markdown",
 
-	url="https://github.com/exciteabletom/inspiring_quotes",
+	url="https://github.com/exciteabletom/quote2image",
 	author="Tommy Dougiamas",
 	author_email="tom@digitalnook.net",
 
