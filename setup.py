@@ -7,7 +7,7 @@ with open("./README.md", encoding="utf-8") as readme:
 
 setup(
 	name="quote2image",
-	version="0.1.4",
+	version="0.1.5",
 
 	description="Generate an image based on a quote.",
 	long_description=long_description,
