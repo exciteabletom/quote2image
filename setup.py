@@ -35,6 +35,6 @@ setup(
 	install_requires=["Pillow>=6.0", "toga==0.3.0.dev23"],
 
 	package_data = {
-		"quote2image": ["*"],
+		"quote2image": ["flairs/*", "fonts/*"]
 	}
 )
