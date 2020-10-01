@@ -7,7 +7,7 @@ with open("./README.md", encoding="utf-8") as readme:
 
 setup(
 	name="quote2image",
-	version="0.1",
+	version="0.1.1",
 
 	description="Generate an image based on a quote.",
 	long_description=long_description,
@@ -32,5 +32,5 @@ setup(
 
 	python_requires=">=3.6",
 
-	install_requires=["Pillow>=6.0", "toga"]
+	install_requires=["Pillow>=6.0", "toga", "toga-cocoa", "toga-gtk"]
 )
