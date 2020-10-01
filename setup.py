@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 from setuptools import setup
 import sys
-from mazegenerator import strings
 
-print(strings.VERSION)
 with open("./README.md", encoding="utf-8") as readme:
 	long_description = readme.read()
 
 setup(
 	name="quote2image",
-	version=strings.VERSION,
+	version="0.1",
 
 	description="Generate an image based on a quote.",
 	long_description=long_description,
@@ -25,14 +23,14 @@ setup(
 	],
 
 	entry_points={
-		"console_scripts": ["mazegenerator = mazegenerator.__main__:main"],
+		"console_scripts": ["quote2image = quote2image.__main__:main"],
 	},
 
-	keywords="maze algorithm image generate",
+	keywords="image-generation image-processing quote",
 
-	packages=["mazegenerator"],
+	packages=["quote2image"],
 
-	python_requires=">=3.5",
+	python_requires=">=3.6",
 
-	install_requires=["Pillow>=6.0", "progress>=1.5"]
+	install_requires=["Pillow>=6.0", "toga"]
 )

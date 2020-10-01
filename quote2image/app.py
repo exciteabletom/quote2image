@@ -1,5 +1,5 @@
 """
-GUI frontend for generate.py
+GUI frontend for generate.py.
 """
 import os
 
@@ -97,4 +97,5 @@ class ImageGenerator(toga.App):
 
 
 def main():
-	return ImageGenerator()
+	return ImageGenerator('quote2image', 'net.digitalnook.quote2image')
+

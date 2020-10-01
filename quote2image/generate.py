@@ -1,7 +1,5 @@
 """
 The backend logic that creates the image.
-
-'main' is the entrypoint.
 """
 import os
 import sys
