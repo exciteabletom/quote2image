@@ -2,6 +2,7 @@
 GUI frontend for generate.py.
 """
 import os
+import random
 
 import toga
 from toga.style import Pack
@@ -39,7 +40,7 @@ class ImageGenerator(toga.App):
 		shadow_box = toga.Box(style=Pack(direction=ROW, padding=5))
 
 		shadow_label = toga.Label(
-			"Add shadow to text? ",
+			"Add shadow to text ",
 			style=Pack(padding=(5))
 		)
 		self.shadow_check = toga.Switch(
@@ -59,7 +60,7 @@ class ImageGenerator(toga.App):
 
 		# The amount of graphics to be overlaid on the image
 		noise_modifier_label = toga.Label(
-			"How many graphics should be added to the image? ",
+			"Amount of background images ",
 			style=Pack(padding=(20, 5))
 		)
 
@@ -88,14 +89,53 @@ class ImageGenerator(toga.App):
 
 	def submit(self, widget):
 		"""
-		Compute the values and save an image.
+		Create the Image.
 		"""
 		os.listdir()
-		generate.main(self.message_input.value,
+		img = generate.main(self.message_input.value,
 					      shadow=self.shadow_check.is_on,
 					      noise=self.noise_modifier.value)
 
+		self.save_image(img)
+
+	def save_image(self, img):
+		"""
+		Show the user the image and save it to a location.
+
+		:param img: A PIL.Image instance
+		:return: Where the image was saved, empty string otherwise
+		"""
+		disallowed_chars = (" ", "'", "\"")
+		file_name = f"{self.message_input.value[0:8]}-{str(random.random())[2:7]}"
+
+		for char in file_name:
+			if char in disallowed_chars:
+				file_name = file_name.replace(char, "")
+
+		img.show()
+
+		file_path = ""
+		if self.main_window.question_dialog("Save this image?", "Would you like to save this image?"):
+			try:
+				file_path = self.main_window.save_file_dialog(
+					"Save image where?",
+					file_name,
+					["png"]
+				)
+			except ValueError:
+				return ""
+
+			img.save(file_path)
+
+		return file_path
+
 
 def main():
+	"""
+	Main entrypoint for the GUI.
+
+	:rtype: toga.App
+	:return: toga.App instance
+	"""
 	return ImageGenerator('quote2image', 'net.digitalnook.quote2image')
 

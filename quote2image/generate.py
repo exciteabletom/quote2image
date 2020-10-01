@@ -20,29 +20,18 @@ def path_convert(path):
 	return str(Path(path))
 
 
-def default_file_path():
+def main(quote, **kwargs):
 	"""
-	Return the OS equivalent of ~/Pictures/quote.png
-
-	:rtype: str
-	"""
-
-	return str(Path(f"{Path.home()}/Pictures/generated_image.png"))
-
-
-def main(quote, file_path=default_file_path(), **kwargs):
-	"""
-	Saves a png with 'quote' printed on it to 'file_path'.
+	Creates a png with 'quote' printed on it.
 
 
 	:param quote: The message to be printed on the image
-	:param file_path: Where to save the png file (defaults to ~/Pictures/)
 
 	:keyword shadow: Whether to add shadow to the text or not.
 	:keyword noise: The amount of graphics to be overlaid on the image
 
-	:rtype: bool
-	:return: True on success,  False otherwise
+	:rtype: PIL.Image
+	:return: A PIL image
 	"""
 
 	# Parse kwarg options
@@ -97,6 +86,5 @@ def main(quote, file_path=default_file_path(), **kwargs):
 		draw.text(((background.width - w) / 2, current_height), line, (255, 95, 00), font=font, align="center")
 		current_height += h + padding
 
-	background.save(file_path, "png")
 
-	return True
+	return background
