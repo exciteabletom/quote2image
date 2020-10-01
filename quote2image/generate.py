@@ -56,15 +56,7 @@ def main(quote, file_path=default_file_path(), **kwargs):
 	else:
 		noise = int(noise)
 
-	fs_sep = path_convert("/")
-
-	if fs_sep in sys.argv[0]:
-		# Get the directory the script is in
-		script_dir_lst = sys.argv[0].split(fs_sep)[:-1]
-		script_dir = fs_sep.join(script_dir_lst)
-
-		# Change to that directory
-		os.chdir(script_dir)
+	os.chdir(str(Path(__file__).parent))
 
 	quote = textwrap.wrap(quote, width=20)
 
