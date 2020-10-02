@@ -119,13 +119,12 @@ class ImageGenerator(toga.App):
 			try:
 				file_path = self.main_window.save_file_dialog(
 					"Save image where?",
-					file_name,
-					["png", ".png"]
+					file_name
 				)
 			except ValueError:
 				return ""
 
-			img.save(file_path)
+			img.save(file_path + ".png")
 
 		return file_path
 
