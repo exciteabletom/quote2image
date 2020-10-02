@@ -6,13 +6,15 @@ This app is in very early development. I still have a lot of features I want to 
 ## Installing
 Simply run `python -m pip install quote2image` to install the package. 
 
-## Using the UI
-Run the app with: `quote2image`.
-
 ## Using as a python library 
 Import with: `from quote2image import generate`.
 
 See `help(generate)` for documentation.   
+
+## Using the UI
+If you want to use the beta UI, run: `python -m pip install quote2image[gui]` to install extra dependencies.
+
+Run the app with: `quote2image`.
 
 ## Output examples
 

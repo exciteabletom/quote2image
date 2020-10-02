@@ -57,7 +57,7 @@ def main(quote, **kwargs):
 		start_height = 250
 
 	# Paste flair into image
-	background = Image.new("RGB", (640, 640), (255, 255, 255))
+	main_img = Image.new("RGB", (640, 640), (255, 255, 255))
 
 	flair_list = os.listdir(path_convert("flairs/"))
 
@@ -68,11 +68,11 @@ def main(quote, **kwargs):
 		flair_path = path_convert(f"flairs/{flair_name}")
 		flair = Image.open(flair_path)
 
-		background.paste(flair, (0, 0), flair)
+		main_img.paste(flair, (0, 0), flair)
 
 	# Add text to image
 	font = ImageFont.truetype("fonts/playlist_script.otf", size=64)
-	draw = ImageDraw.Draw(background)
+	draw = ImageDraw.Draw(main_img)
 
 	current_height = start_height
 	padding = 20
@@ -81,10 +81,9 @@ def main(quote, **kwargs):
 
 		# Text shadow is a grey text layer slightly offset to the normal text
 		if shadow:
-			draw.text((((background.width - w) / 2) - 2, current_height - 2), line, (75, 75, 75), font=font, align="center")
+			draw.text((((main_img.width - w) / 2) - 2, current_height - 2), line, (75, 75, 75), font=font, align="center")
 
-		draw.text(((background.width - w) / 2, current_height), line, (255, 95, 00), font=font, align="center")
+		draw.text(((main_img.width - w) / 2, current_height), line, (255, 95, 00), font=font, align="center")
 		current_height += h + padding
 
-
-	return background
+	return main_img

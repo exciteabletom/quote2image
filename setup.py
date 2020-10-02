@@ -32,9 +32,13 @@ setup(
 
 	python_requires=">=3.6",
 
-	install_requires=["Pillow>=6.0", "toga==0.3.0.dev23"],
+	install_requires=["Pillow>=6.0"],
 
-	package_data = {
+	extras_require={
+		"gui": ["toga==0.3.0.dev23"]
+	},
+
+	package_data={
 		"quote2image": ["flairs/*", "fonts/*"]
 	}
 )
