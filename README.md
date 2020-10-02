@@ -1,7 +1,9 @@
 # quote2image
 Generate cheesy inspirational quote messages using a nice user interface. 
 
-This app is in very early development. I still have a lot of features I want to add.
+This is still in very early development. I still have a lot of features I want to add and a lot of stuff isn't working at the moment.
+
+Try it with the web interface at <a href="https://digitalnook.net/quote2image/">Digital Nook</a>
 
 ## Installing
 Simply run `python -m pip install quote2image` to install the package. 
