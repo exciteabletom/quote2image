@@ -168,7 +168,7 @@ def main(quote, **kwargs):
 	debug = kwargs.get("debug")
 
 	# Go to the directory containing this module
-	os.chdir(str(Path(__file__).parent))
+	file_prefix = str(Path(__file__).parent)
 
 	quote = textwrap.wrap(quote, width=20)
 
@@ -182,13 +182,13 @@ def main(quote, **kwargs):
 	main_img = Image.new("RGB", (640, 640), colors["background"])
 
 	# Paste flair into image
-	flair_list = os.listdir(path_convert("flairs/"))
+	flair_list = os.listdir(path_convert(f"{file_prefix}/flairs/"))
 
 	for _ in range(noise):
 		flair_name = flair_list[random.randint(0, len(flair_list) - 1)]
 		flair_list.remove(flair_name)
 
-		flair_path = path_convert(f"flairs/{flair_name}")
+		flair_path = path_convert(f"{file_prefix}/flairs/{flair_name}")
 		flair = Image.open(flair_path)
 
 		if colors["noise"]:
@@ -202,7 +202,7 @@ def main(quote, **kwargs):
 		main_img.paste(flair, (0, 0), flair)
 
 	# Add text to image
-	font = ImageFont.truetype("fonts/playlist_script.otf", size=64)
+	font = ImageFont.truetype(path_convert(f"{file_prefix}/fonts/playlist_script.otf"), size=64)
 	draw = ImageDraw.Draw(main_img)
 
 	current_height = start_height
