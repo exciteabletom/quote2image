@@ -40,48 +40,6 @@ def random_color():
 
 	return colors_rand[random.randint(0, len(colors_rand) - 1)]
 
-
-
-def hex_to_rgb(hex_str):
-	"""
-	Converts a hex_str colour string to an RGB tuple.
-
-	E.g. "#FFFFFF" --> (255, 255, 255)
-
-	:param hex_str: A hexadecimal colour string. Can start with '#' or not
-
-	:raises ValueError: if
-	:return: A tuple represented RGB values
-	"""
-	# List of valid hex_str values
-	hex_values = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"]
-
-	# Convert hex_str string to upper case
-	hex_str = hex_str.upper()
-
-	# Remove hashtags from string if they exist
-	hex_str = hex_str.replace("#", "")
-
-	if len(hex_str) != 6:
-		raise ValueError("Hex string is the incorrect length")
-
-	for char in hex_str:
-		# Check validity of hex_str string
-		if char not in hex_values:
-			raise ValueError("Invalid characters in hex string.")
-
-	# #FFFFFF becomes ['FF', 'FF', 'FF']
-	hex_pairs = [hex_str[0:2], hex_str[2:4], hex_str[4:6]]
-	rgb_pairs = []
-
-	for pair in hex_pairs:
-		# Hex to int
-		rgb_pairs.append(int(pair, 16))
-
-	# Return as an immutable tuple
-	return tuple(rgb_pairs)
-
-
 def tint_image(img: Image, color):
 	"""
 	Tint an image a certain colour and then blur it slightly.
