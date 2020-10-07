@@ -5,7 +5,7 @@ import os
 import random
 import textwrap
 
-from PIL import Image, ImageFont, ImageDraw, ImageOps, ImageEnhance, ImageFilter
+from PIL import Image, ImageFont, ImageDraw, ImageOps, ImageEnhance
 from pathlib import Path
 
 
@@ -18,8 +18,6 @@ def path_convert(path):
 	"""
 	return str(Path(path))
 
-
-# A list of random colours that can be picked from
 
 def random_color():
 	"""
@@ -39,6 +37,7 @@ def random_color():
 	]
 
 	return colors_rand[random.randint(0, len(colors_rand) - 1)]
+
 
 def tint_image(img: Image, color):
 	"""
@@ -66,8 +65,6 @@ def tint_image(img: Image, color):
 
 	# Return alpha channel
 	tinted.putalpha(alpha)
-
-
 
 	return tinted
 
