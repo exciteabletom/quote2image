@@ -1,4 +1,5 @@
-from . import app
+from . import gui
 
 def main():
-    app.main().main_loop()
+    gui.main().main_loop()
+
