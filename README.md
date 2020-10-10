@@ -14,7 +14,7 @@ Import with: `from quote2image import generate`.
 See `help(generate)` for documentation.   
 
 ## Using the UI
-If you want to use the beta UI, run: `python -m pip install quote2image[gui]` to install extra dependencies.
+If you want to use the UI (very incomplete and buggy), run: `python -m pip install quote2image[gui]` to install extra dependencies.
 
 Run the app with: `quote2image`.
 
