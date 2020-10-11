@@ -1,7 +1,5 @@
 # quote2image
-Generate cheesy inspirational quote messages using a nice user interface. 
-
-This is still in very early development. I still have a lot of features I want to add and a lot of stuff isn't working at the moment.
+Generate cheesy inspirational quote messages with python!
 
 Try it with the web interface at <a href="https://digitalnook.net/quote2image/">Digital Nook</a>
 
@@ -22,6 +20,5 @@ Run the app with: `quote2image`.
 
 <img src="https://github.com/exciteabletom/quote2image/blob/master/examples/example1.png" />
     
-        
         
 <img src="https://github.com/exciteabletom/quote2image/blob/master/examples/example2.png" />
