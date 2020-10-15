@@ -22,3 +22,6 @@ Run the app with: `quote2image`.
     
         
 <img src="https://github.com/exciteabletom/quote2image/blob/master/examples/example2.png" />
+
+## Credits
+Playlist script font from: https://befonts.com/playlist-script-font.html
